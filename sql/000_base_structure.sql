@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   UNIQUE KEY `setting` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `settings` (`name`, `value`) VALUES ('DB_VERSION', '0.0.10');
+INSERT INTO `settings` (`name`, `value`) VALUES ('DB_VERSION', '0.0.11');
 
 CREATE TABLE IF NOT EXISTS `shares` (
   `id` bigint(30) NOT NULL AUTO_INCREMENT,
@@ -155,8 +155,8 @@ CREATE TABLE IF NOT EXISTS `shares` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `shares_archive` (
-  `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
-  `share_id` int(255) unsigned NOT NULL,
+  `id` bigint(30) unsigned NOT NULL AUTO_INCREMENT,
+  `share_id` bigint(30) unsigned NOT NULL,
   `username` varchar(120) NOT NULL,
   `our_result` enum('Y','N') DEFAULT NULL,
   `upstream_result` enum('Y','N') DEFAULT NULL,
